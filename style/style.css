@@ -1,0 +1,56 @@
+.galactusIcon{
+	max-width: 7%;
+}
+
+/*.search-bar:before{
+	max-width: 7%;
+	content:url('../images/GalactusICON.jpg');
+	position:relative;
+  	z-index:100000; 
+  	left:-30px;
+  	top:30px;
+}
+
+
+.search-bar{
+	margin:30px;
+	margin-top:8px;
+	
+}
+
+.search-bar input{
+	width: 75%;
+	-webkit-box-shadow: 0 2px 1px -1px black;
+	-moz-box-shadow: 0 2px 1px -1px black;
+	box-shadow: 0 1px 1px -1px black;
+	box-sizing: border-box;
+	border: 1px solid grey;
+	border-radius: 4px;
+	padding: 10px;
+
+}
+*/
+
+.video-item img{
+	max-width: 64px;
+}
+
+
+.video-detail .details{
+	margin-top: 10px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+
+}
+
+.list-group-item{
+	cursor: pointer;
+}
+
+.list-group-item:hover{
+	background-color: #eee;
+}
+
+
+
