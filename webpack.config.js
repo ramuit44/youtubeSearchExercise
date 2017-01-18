@@ -9,6 +9,13 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader'
+      },
+    ],
     loaders: [
       {
         exclude: /node_modules/,
@@ -20,7 +27,9 @@ module.exports = {
       {
                   test: /\.scss$/,
                   loaders: [ 'style', 'css', 'sass' ]
-      }
+      },
+      { test: /\.css$/, loader: "style-loader!css-loader" }
+
 
 
     ]
@@ -31,6 +40,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './',
+    host: '0.0.0.0',
     port: 8008,
     
   }

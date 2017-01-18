@@ -1,0 +1,93 @@
+//colors
+$color_alto_approx: #ddd;
+$color_storm_dust_approx: #666;
+$color_royal_blue_approx: #4285f4;
+$color_chathams_blue_approx: #21527d;
+$white: #fff;
+
+//font family
+$tab-font-family : Roboto,Helvetica,Arial,sans-serif;
+//fonts mixin
+@mixin tabs-font($size,$weight,$family){
+	font-weight: $weight;
+	font-size: $size;
+	font-family: $family;
+}
+
+
+//@extend-elements
+//original selectors
+//.nav-tabs >li.active >a, .nav-tabs >li >a:hover
+%extend_1 {
+	border: none;
+	color: $color_royal_blue_approx !important;
+	background: transparent;
+}
+
+//original selectors
+//.nav-tabs >li.active >a, .nav-tabs >li >a
+%extend_2 {
+	text-decoration: none;
+	@include tabs-font(1.1em,600,$tab-font-family)
+}
+
+
+.nav-tabs {
+	border-bottom: 1px solid $color_alto_approx;
+	margin-top: 25px;
+	> li {
+		
+		&.active {
+			> a {
+				border-width: 0;
+				@extend %extend_1;
+				@extend %extend_2;
+				&:focus {
+					border-width: 0;
+				}
+				&:hover {
+					border-width: 0;
+				}
+			}
+			> a::after {
+				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+				transform: scale(1);
+			}
+		}
+		> a {
+			border: none;
+			color: $color_storm_dust_approx;
+			@extend %extend_2;
+			&:hover {
+				@extend %extend_1;
+			}
+		}
+		> a::after {
+			content: "";
+			background: $color_royal_blue_approx;
+			height: 2px;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: -1px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: all 250ms ease 0s;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: scale(0);
+		}
+		&:hover > a::after {
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: scale(1);
+		}
+	}
+}
+.tab-pane {
+	padding: 15px 0;
+}
+.tab-content {
+	padding: 20px;
+}
+.tab-nav > li > a::after {
+	background: $color_chathams_blue_approx none repeat scroll 0 0;
+	color: $white;
+}

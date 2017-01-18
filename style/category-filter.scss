@@ -1,0 +1,30 @@
+//colors
+$color_royal_blue_approx: #4285f4;
+$white: white;
+
+.dropdown-menu {
+	li {
+		a {
+			text-decoration:none;
+		}
+		a:hover{
+			background-color:$color_royal_blue_approx;
+			background-image: none;
+			color:$white;
+		}
+	}
+}
+
+.dropdownbtn{
+	font-size: 14px;
+	width:110%;
+}
+
+.dropdown {
+	.btn-lg {
+		@extend .dropdownbtn;
+	}
+	.btn-group-lg>.btn{
+		@extend .dropdownbtn;
+	}
+}
