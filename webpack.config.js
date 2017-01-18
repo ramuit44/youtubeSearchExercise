@@ -40,7 +40,6 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     contentBase: './',
-    host: '0.0.0.0',
     port: 8008,
     
   }
